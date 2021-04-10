@@ -1,0 +1,27 @@
+{
+    "url": "https://www.acoustic.com/blog/what-will-2022-bring-for-brands-in-a-cookie-less-world",
+    "title": "What will 2022 bring for brands in a cookie-less world?",
+    "date": "Sep 30, 2020",
+    "author": {
+        "name": "Aidan Lynch",
+        "job": "Account Executive",
+        "imageUrl": "https://content-us-1.content-cms.com/105338e5-04e0-4801-8a1e-856ba29f2e54//dxresources/9c61/9c6153fd-13bd-40a1-b4ba-4fe52c365bae.png?resize=220px%3A220px&crop=220%3A220%3B0%2C0"
+    },
+    "content": [
+        "The details that companies, their marketing leaders, and agencies need to know",
+        "Cookies—the tracking measures that follow us around the web, rather than delicious dessert treats—have long enabled websites to monitor our behavior. AdTech networks use cookies to help advertisers direct their messages and content to prospective customers across multiple interactions across the web. Cookies, as conduits to targeted advertising, are the foundation for digital advertising programs. ",
+        "Cookies are in trouble, though. Internet browsers have had it out for them for a while, but the disdain for cookies has reached a fever pitch. Now we’re running out the clock on cookies. Here’s a brief history: ",
+        "In 2017, Apple started with Intelligent Tracking Prevention (ITP) which empowers users to prevent cross-site tracking from advertisers and has had several iterations due to advertisers’ efforts to circumvent it.  Firefox now blocks third-party cookies as a default setting. Google has announced it will also phase out third-party cookies in Chrome. By 2022, all major browsers will block third-party cookies.  ",
+        "What does all of this mean for marketers? ",
+        "First, it’s important to understand the differences between first and third-party cookies: ",
+        "First-party cookies originate with a web publisher Third-party cookies are driven by an external entity, like an AdTech network ",
+        " ",
+        "Brands taking advantage of their own first-party data ",
+        "Elevating the importance of first-party data is critical for brands (advertisers) to emerge successfully from a cookie-less future. Unfortunately, first-party data is often in silos and difficult to quickly activate. Brands also consistently have major gaps in the first-party data they are collecting. For example, it’s imperative that brands use a unique identifier in their web analytics, or in the destination URL for any direct messages. ",
+        "These are seemingly simple tasks but often require a major overhaul of marketing and MarTech processes. Brands simply cannot wait to implement any required data-aggregation shifts as first-party data will become more important than ever—quickly. Brands should immediately take stock of their first-party data, understand where any information gaps are, and ensure they have the tools available to freely move their owned data through their digital ecosystems. ",
+        "Stay a step ahead, and get creative ",
+        "At Acoustic, we’re helping our clients who rely upon us to up-level their MarTech to address the data gap through our Acoustic Campaign and Acoustic Analytics solutions. We’re helping marketers prepare for a world where browsers are pushing for brands to have less and less information. Marketers at brands, along with their agencies, should ask themselves these questions: ",
+        "Does our data management platform use other forms of identifiers, instead of third-party cookies? If not, what alternative tech platform will, while also connecting with existing systems? Do partnerships exist to cross-pollinate vast databases of already authenticated users? Are our teams ready to change how they work, and the information they rely upon to be successful? Proactivity will be key to emerging unscathed from this overhaul. ",
+        "To learn more about steps advertisers can take, check out Acoustic’s recent webinar Acoustic + Havas: Demystifying the cookie apocalypse."
+    ]
+}

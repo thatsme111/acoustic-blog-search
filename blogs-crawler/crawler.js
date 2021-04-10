@@ -40,11 +40,22 @@ const parseBlog = async (page, url) => {
         for ([index, url] of urls.entries()) {
             console.log(padIndex(index), url);
             const blog = await parseBlog(page, url);
-            const fileName = `blogs/${padIndex(index)} ${url.substr(url.indexOf("blog/") + "blog/".length)}`;
-            fs.writeFileSync(fileName, JSON.stringify(blog));
+            const fileName = `blogs/${padIndex(index)} ${url.substr(url.indexOf("blog/") + "blog/".length)}.json`;
+            fs.writeFileSync(fileName, JSON.stringify(blog, null, 4));
         }
         await browser.close();
     } catch (error) {
         console.log(error);
     }
 })();
+
+
+// fs.readdir("blogs", (err, files) => {
+//     files.forEach(file => {
+//         console.log(file);
+//         // fs.renameSync("blogs/" + file, "blogs/" + file + ".json");
+//         const fileName = "blogs/" + file;
+//         const content = fs.readFileSync(fileName).toString();
+//         fs.writeFileSync("blogs/" + file, JSON.stringify(JSON.parse(content), null, 4))
+//     });
+// });
