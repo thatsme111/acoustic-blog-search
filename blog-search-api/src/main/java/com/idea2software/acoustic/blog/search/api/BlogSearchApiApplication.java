@@ -1,8 +1,6 @@
 package com.idea2software.acoustic.blog.search.api;
 
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +39,7 @@ public class BlogSearchApiApplication {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void runAfterStartup() {
-		logger.info("Loading initial blog data into database...");
+		logger.info("Importing initial blog data into the database...");
 		for (SavedBlog savedBlog : savedBlogsHandler.getSavedBlogs()) {
 			SavedAuthor savedAuthor = savedBlog.getAuthor();
 
@@ -65,14 +63,19 @@ public class BlogSearchApiApplication {
 				blogContentRepository.save(blogContent);
 			}
 		}
+		logger.info("Data Import Completed.");
 		
-		Stream<BlogContent> stream = StreamSupport.stream(blogContentRepository.findAll().spliterator(), false);
-		AtomicInteger runner = new AtomicInteger(0);
-		stream.forEach(e -> {
-			System.out.println(e);
-			runner.incrementAndGet();
-		});
-		System.out.println("runner: " + runner.get());
+//		Stream<BlogContent> stream = StreamSupport.stream(blogContentRepository.findAll().spliterator(), false);
+//		AtomicInteger runner = new AtomicInteger(0);
+//		stream.forEach(e -> {
+//			System.out.println(e);
+//			runner.incrementAndGet();
+//		});
+//		System.out.println("runner: " + runner.get());
+		
+//		List<BlogContent> list = blogContentRepository.findTop10ByContentContainingIgnoreCase("COVID-19");
+//		list.forEach(System.out::println);
+//		System.out.println("size: " + list.size());
 	}
 
 	public static void main(String[] args) throws Exception {
