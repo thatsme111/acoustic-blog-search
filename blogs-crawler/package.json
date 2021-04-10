@@ -1,0 +1,17 @@
+{
+  "name": "blogs-crawler",
+  "version": "1.0.0",
+  "description": "Crawl and dump all blog content in json file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shailesh Nighojkar",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "axios": "^0.21.1",
+    "puppeteer": "^8.0.0",
+    "xml2js": "^0.4.23"
+  }
+}
