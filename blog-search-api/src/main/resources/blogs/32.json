@@ -1,0 +1,25 @@
+{
+    "url": "https://www.acoustic.com/blog/tips-on-securing-your-analytics-and-marketing-data",
+    "title": "Tips on securing your analytics and marketing data",
+    "date": "Jul 8, 2020",
+    "author": {
+        "name": "Steve Dotson",
+        "job": "Chief Information Security Officer"
+    },
+    "content": [
+        "Using marketing analytics and sophisticated marketing applications automatically means that you are collecting valuable and sensitive information. You’re probably capturing not only potentially personally identifiable information (PII), but also privacy-related activities, such as browsing habits and purchases. That makes this information not only critically valuable to you, but also a tempting target to hackers. Clearly, your security measures and privacy policies are important to you, your organization, and your customers.",
+        "A data breach — intentional or unintentional — would impact your customers, the consumers for whom you are collecting data, and your own company. The potential damage can take many forms: your company’s reputation, potential fines, lawsuits, impact on future revenue, and a loss of customer trust. A breach could even lead to government action against your company. The California Consumer Privacy Act (CCPA) and the EU’s General Data Protection Regulation (GDPR) were created to protect consumer data and put consumers more in control of how their data is used — with the ability to remove their data from use. None of this is to be taken lightly.",
+        "What can you do?",
+        "Overall, you need to develop a mature security and privacy program to ensure protection of consumer data, as well as compliance with applicable regulations. Easy to say, but how?",
+        "Step one is to create a data inventory and chart the data flows within your enterprise to document and understand what data elements are being collected, along with your general asset management process — the policies as well as the realities. Remember: If you don’t identify it, you can’t protect it.",
+        "Next, establish or update your security and privacy controls commensurate with the sensitivity of the data and compliance obligations. You can leverage and tailor existing security standards such as ISO 27001 (International Organization for Standardization) or NIST CSF (National Institute of Standards and Technology Cybersecurity Framework). Carefully review your critical security controls including access control, network access control, and ongoing vulnerability management. Ensure that you have visibility into security events occurring throughout your environment, including malware events, phishing campaigns, and unauthorized access.",
+        "Assess your program regularly through internal audits or third-party penetration tests. (Quick, get the white hats!) This continual review and updating of your security is important: Hackers are trying every day to find a new way to get in. You need to be one step ahead.",
+        "Once you feel your program and processes are at a reasonable level of maturity, consider pursuing a third-party security attestation (Statement on Standards for Attestation Engagements — SSAE-18 SOC2 report) or certification (ISO 27001 or HITRUST). These can provide a third-party view and maturity assessment of your security and privacy program. Having these on hand can help build the confidence of your partners and customers.",
+        "Back to dealing with governments: Depending on where you do business, keep an eye on managing GDPR and CCPA compliance (or any other local requirements) that apply to your locations and are appropriate to your environment.",
+        "There’s a lot to keep track of, and most likely you won’t have all of the equipment and assets you need in-house. Much of this expertise can come from outside your organization, including specialized support or even outside counsel.",
+        "If you’re using vendors and/or software as a service (SaaS) solutions",
+        "Consider what data elements vendors or service providers will be accessing, storing, and processing. You ought to be able to trust them, but you still need to determine who has access to your sensitive information and remain in compliance with regulations. Will they be integrating with your systems? If so, why? Be sure you know what and for what purpose you’re sharing your data.",
+        "Before signing on the dotted line, fully assess a potential vendor’s security posture. Have them complete security and privacy questionnaires and collect and review their third-party certifications and attestations (e.g. SSAE-18 SOC2 reports, ISO 27001 certifications). Then ensure all contractual agreements have the appropriate security and privacy provisions. But don’t stop there: after you’ve onboarded them, revisit their security practices and verify their reputation periodically. Even good organizations can go off the rails or be taken by surprise.",
+        "Your corporate data is your most important asset. Guard your data well: Your business depends on it."
+    ]
+}

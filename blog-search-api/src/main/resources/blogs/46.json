@@ -1,0 +1,25 @@
+{
+    "url": "https://www.acoustic.com/blog/how-to-make-sms-a-key-part-of-your-marketing-strategy",
+    "title": "How to make SMS a key part of your marketing strategy",
+    "date": "Jan 5, 2021",
+    "author": {
+        "name": "Michael Trapani",
+        "job": "Sr. Director, Product Marketing and Partnership Marketing",
+        "imageUrl": "https://content-us-1.content-cms.com/105338e5-04e0-4801-8a1e-856ba29f2e54//dxresources/6189/6189bdb5-448c-4ec0-9b99-57a78f37233c.jpg?resize=330px%3A220px&crop=220%3A220%3B55%2C0"
+    },
+    "content": [
+        "Meeting your customers where they are is paramount to the success of any marketing team. As a result, text message (or SMS) marketing is one of the most efficient channels in a marketer’s toolkit. In fact, SMS conversion rates increased 169% year-over-year. With stats like that, SMS is considered integral to mobile and overall marketing strategy.",
+        "Understanding the ins and outs of an SMS approach is no easy feat. With some simple guidance on how to choose your tech stack, develop your strategy, and measure performance, it’s possible to prioritize SMS as part of your marketing mix.",
+        "Choosing a platform",
+        "Knowing what you need in your platform should be the first task in your SMS journey. Deliverability may seem like table stakes, and in the U.S. market, it is. All the tier-1 SMS aggregators are backed by the carriers and marketers can trust that 100% of their campaigns will be delivered to the entirety of their lists; however, in emerging markets, many SMS marketing providers are considered “gray,”meaning the recipients might be real, or maybe not. In these markets, deliverability is more meaningful.",
+        "The use cases your marketing team is interested in determine the important metrics you’ll need to consider when evaluating providers. If your brand is focused on text-to-join campaigns, metrics such as acquisition cost per subscriber, list-growth rate, and response rate all matter. If you’re more interested in service notifications, such as shipping updates, it matters that those messages get delivered. Most customers won’t take any further action; however, attrition rate becomes important because these messages are generally well-received and if the team experiences high opt-out rates, something isn’t going well.",
+        "Building your SMS strategy",
+        "Personalization is a must. Ensuring that messages sent are relevant will strengthen your ROI, reduce churn rates, and build loyalty. This is doubly true for the mobile marketing world—and on both sides of a text campaign.",
+        "SMS marketing is one of the most expensive marketing channels in use today — because of the ecosystem required to make it happen including the marketing cloud, the aggregator, and the carrier—but it’s also one of the most effective. Regardless, you can’t afford to waste money sending texts to people who aren’t going to think twice about it, or worse, be annoyed by the outreach. From a consumer’s perspective, it’s more personal and feels more invasive to get a text from a brand you weren’t aware had your phone number.",
+        "It’s best practice to link channels, while treating them separately. For example, SMS and email have a proven track record of better conversions when they’re used together. Ensure that these channels are communicating to each other. A seamless integration of data should exist and be accessible to the employees working on each effort. This doesn’t mean that the channels should be seen as equals, but marketers must understand the nuances of each. An email copied and pasted into an SMS is a fast way for marketers to lose subscribers and waste money. SMS should be reserved for short conversations, keeping your customers in the loop, or driving a single call-to-action. Keep it personal, relevant, and most of all, short. ",
+        "Measuring your success",
+        "Calculating your ROI for SMS campaigns can be complicated given each type of message or code is priced differently. For example, SMS is more expensive per message than 1-way. MMS, which allows for multimedia creative to be included in the message, is more expensive than SMS (just text). Additional features, like location-based messaging, can also affect the cost of the messages sent.",
+        "For this reason, teams will need to create an ROI model for each type of message. With the right models, you can reliably measure ROI and can see how effective SMS marketing can be.",
+        "To learn more about how SMS and mobile push can strengthen your marketing strategy, watch our on-demand webinar featuring mobile engagement insights from Forrester."
+    ]
+}

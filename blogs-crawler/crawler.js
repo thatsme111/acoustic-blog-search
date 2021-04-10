@@ -53,9 +53,9 @@ const parseBlog = async (page, url) => {
 // fs.readdir("blogs", (err, files) => {
 //     files.forEach(file => {
 //         console.log(file);
-//         // fs.renameSync("blogs/" + file, "blogs/" + file + ".json");
-//         const fileName = "blogs/" + file;
-//         const content = fs.readFileSync(fileName).toString();
-//         fs.writeFileSync("blogs/" + file, JSON.stringify(JSON.parse(content), null, 4))
+//         fs.renameSync("blogs/" + file, "blogs/" + file.substr(0,2) + ".json");
+//         // const fileName = "blogs/" + file;
+//         // const content = fs.readFileSync(fileName).toString();
+//         // fs.writeFileSync("blogs/" + file, JSON.stringify(JSON.parse(content), null, 4))
 //     });
 // });
