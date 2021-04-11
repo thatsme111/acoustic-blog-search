@@ -6,6 +6,11 @@ Search Engine for Acoustic (acoustic.com) blogs using - spring boot, hsqldb, rea
 2. blog-search-api - Expose REST API for autofill and blog search
 3. blog-search-frontend-react - Frontend to search blog
 
+## How to run locally?
+1. Start ***blog-search-api*** spring boot application, it will load default data into in memory hsqldb on start automatically.
+2. Start ***blog-search-frontend-react*** react app
+3. Open browser and start searching acoustic blogs
+
 ## Blogs Crawler
 1. Read sitemap https://acoustic.com/sitemap.xml
 2. Parse xml and filter all urls containing 'blogs'
