@@ -45,6 +45,11 @@ export default function App() {
     setSearchDisabled(false);
   };
 
+  const handleAutoCompleteInputChange = e => {
+    setSearch(e.target.innerHTML);
+    handleSearchButtonClicked();
+  };
+
   return (
     <div className="App">
       <Container>
@@ -52,7 +57,7 @@ export default function App() {
           id="search-autocomplete"
           noOptionsText="Did not match any blogs."
           options={autoCompleteOptions}
-          onInputChange={e => setSearch(e.target.innerHTML)}
+          onInputChange={handleAutoCompleteInputChange}
           style={{ marginTop: 24 }}
           renderInput={(params) =>
             <TextField
