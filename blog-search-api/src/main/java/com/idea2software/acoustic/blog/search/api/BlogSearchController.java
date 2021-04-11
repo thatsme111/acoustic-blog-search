@@ -15,10 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.idea2software.acoustic.blog.search.api.entity.Author;
 import com.idea2software.acoustic.blog.search.api.entity.Blog;
 import com.idea2software.acoustic.blog.search.api.entity.BlogContent;
-import com.idea2software.acoustic.blog.search.api.repository.AuthorRepository;
-import com.idea2software.acoustic.blog.search.api.repository.BlogContentRepository;
-import com.idea2software.acoustic.blog.search.api.repository.BlogRepository;
+import com.idea2software.acoustic.blog.search.api.service.BlogSearchService;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,19 +27,13 @@ public class BlogSearchController {
 	private static final Logger logger = LoggerFactory.getLogger(BlogSearchController.class);
 
 	@Autowired
-	private BlogContentRepository blogContentRepository;
-
-	@Autowired
-	private BlogRepository blogRepository;
+	private BlogSearchService blogSearchService; 
 	
-	@Autowired
-	private AuthorRepository authorRepository;
-
 	@CrossOrigin
 	@GetMapping("/autofill")
 	public List<String> getAutofill(@RequestParam("q") String query) { // @formatter:off
 		logger.info("[" + new Date() + "] autofill query: " + query);
-		return blogContentRepository.findTop10ByContentContainingIgnoreCase(query)
+		return blogSearchService.getAutoFillContent(query)
 				.stream()
 				.map(e -> e.getContent())
 				.map(content -> {
@@ -58,13 +51,22 @@ public class BlogSearchController {
 
 	@CrossOrigin
 	@GetMapping("/blogs")
-	public List<ResultBlog> getBlogs(@RequestParam("q") String query) { // @formatter:off
-		logger.info("[" + new Date() + "] blogs query: " + query);
-		return blogContentRepository.findTop10ByContentContainingIgnoreCase(query)
-				.stream()
-				.map(ResultBlog::new)
-				.collect(Collectors.toList());
+	public BlogListResponse getBlogs(@RequestParam("q") String query, @RequestParam("page") int page) { // @formatter:off
+		logger.info("[" + new Date() + "] blogs query: " + query + " page: " + page);
+		List<ResultBlog> list = blogSearchService.getBlogsByPage(query, page)
+			.stream()
+			.map(ResultBlog::new)
+			.collect(Collectors.toList());
+		return new BlogListResponse(list, blogSearchService.getTotalPages(query));
 	} // @formatter:on
+	
+	@Getter
+	@Setter
+	@AllArgsConstructor
+	public class BlogListResponse {
+		private List<ResultBlog> list;
+		private long size;
+	}
 
 	@Getter
 	@Setter
@@ -81,12 +83,12 @@ public class BlogSearchController {
 
 		public ResultBlog(BlogContent blogContent) {
 			this.content = blogContent.getContent();
-			Blog blog = blogRepository.findById(blogContent.getBlogId()).get();
+			Blog blog = blogSearchService.getBlogById(blogContent.getBlogId());
 			this.blogId = blog.getId();
 			this.title = blog.getTitle();
 			this.url = blog.getUrl();
 			this.date = blog.getDate();
-			Author author = authorRepository.findById(blog.getAuthorId()).get();
+			Author author = blogSearchService.getAuthorById(blog.getAuthorId());
 			this.authorName = author.getName();
 			this.authorJob = author.getJob();
 			this.authorImageUrl = author.getImageUrl();
