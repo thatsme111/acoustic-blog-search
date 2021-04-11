@@ -1,6 +1,6 @@
 import { Container, TextField, InputAdornment, Button, Avatar, List, ListItem, ListItemText, Typography, ListItemAvatar } from '@material-ui/core';
 import { Fragment, useState } from 'react';
-import { Autocomplete } from '@material-ui/lab';
+import { Autocomplete, Pagination } from '@material-ui/lab';
 import SearchIcon from '@material-ui/icons/Search';
 import axios from "axios";
 import './App.css';
@@ -18,6 +18,8 @@ export default function App() {
   const [autoCompleteOptions, setAutoCompleteOptions] = useState([]);
   const [searchDisabled, setSearchDisabled] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
+  const [page, setPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
 
   const handleTextFieldOnInput = async e => {
     const value = e.target.value;
@@ -31,24 +33,41 @@ export default function App() {
   };
 
   const handleSearchButtonClicked = async () => {
-    console.log("searching...", search);
     setSearchDisabled(true);
-    const response = await axios.get("http://localhost:8080/blogs?q=" + search);
-    const list = response.data;
+    const response = await axios.get("http://localhost:8080/blogs?q=" + search + "&page=" + page);
+    const { list, totalPages } = response.data;
+    setTotalPages(totalPages);
     list.forEach(e => {
       e.content = e.content
         .split(new RegExp(search, "i"))
         .join(`<span class="highlight">${search}</span>`);
     });
-    console.log(list);
     setSearchResult(list);
     setSearchDisabled(false);
   };
 
   const handleAutoCompleteInputChange = e => {
+    const value = e.target.innerHTML;
     setSearch(e.target.innerHTML);
+    if (value) {
+      handleSearchButtonClicked();
+    }
+  };
+
+  const handlePaginationChange = (e, currPage) => {
+    setPage(currPage);
     handleSearchButtonClicked();
   };
+
+  let pagination = "";
+  if (totalPages) {
+    pagination = <Pagination 
+        count={totalPages} 
+        variant="outlined" 
+        shape="rounded"
+        onChange={handlePaginationChange}
+        style={{ marginBottom: 48 }} />;
+  }
 
   return (
     <div className="App">
@@ -59,10 +78,10 @@ export default function App() {
           options={autoCompleteOptions}
           onInputChange={handleAutoCompleteInputChange}
           style={{ marginTop: 24 }}
+          clearOnBlur={false}
           renderInput={(params) =>
             <TextField
               {...params}
-              value={search}
               onInput={e => debounce(() => handleTextFieldOnInput(e), 200)}
               placeholder="Acoustic Blogs Search"
               variant="outlined"
@@ -115,6 +134,7 @@ export default function App() {
             })
           }
         </List>
+        {pagination}
       </Container>
     </div>
   );

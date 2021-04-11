@@ -65,7 +65,7 @@ public class BlogSearchController {
 	@AllArgsConstructor
 	public class BlogListResponse {
 		private List<ResultBlog> list;
-		private long size;
+		private long totalPages;
 	}
 
 	@Getter
