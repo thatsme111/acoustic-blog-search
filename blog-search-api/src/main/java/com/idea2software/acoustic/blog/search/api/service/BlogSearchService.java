@@ -45,9 +45,6 @@ public class BlogSearchService {
 
 	public long getTotalPages(String query) {
 		long count = blogContentRepository.countByContentContainingIgnoreCase(query);
-		System.out.println("---coubt: " + count);
-		System.out.println("Math.ceil(count / PAGE_SIZE): " + Math.ceil(count / PAGE_SIZE));
-		System.out.println("Double.valueOf(Math.ceil(count / PAGE_SIZE)): " + Double.valueOf(Math.ceil(count / PAGE_SIZE)));
 		return Double.valueOf(Math.ceil((double)count / PAGE_SIZE)).longValue();
 	}
 
