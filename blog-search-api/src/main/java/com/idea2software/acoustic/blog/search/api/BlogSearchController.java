@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,7 @@ public class BlogSearchController {
 	@Autowired
 	private BlogContentRepository blogContentRepository;
 
+	@CrossOrigin
 	@GetMapping("/autofill")
 	public List<String> getAutofill(@RequestParam("q") String query) { // @formatter:off
 		logger.info("[" + new Date() + "] autofill query: " + query);
