@@ -8,4 +8,6 @@ import com.idea2software.acoustic.blog.search.api.entity.Blog;
 @Repository
 public interface BlogRepository extends CrudRepository<Blog, Integer> {
 
+	
+	
 }

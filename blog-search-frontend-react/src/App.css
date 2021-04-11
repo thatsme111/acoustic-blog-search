@@ -37,6 +37,15 @@
   }
 }
 
-.empty-search {
-  
+.result-list .MuiListItemAvatar-root {
+  width: 160px;
+  padding-right: 12px;
+}
+.result-list .MuiAvatar-root {
+  margin: 12px 0px 12px 0px;
+}
+
+.highlight {
+  background-color: lightgray;
+  font-size: 1.2em;
 }
