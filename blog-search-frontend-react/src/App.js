@@ -18,7 +18,6 @@ export default function App() {
   const [autoCompleteOptions, setAutoCompleteOptions] = useState([]);
   const [searchDisabled, setSearchDisabled] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
-  const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
 
   const handleTextFieldOnInput = async e => {
@@ -32,9 +31,10 @@ export default function App() {
     setAutoCompleteOptions(options);
   };
 
-  const handleSearchButtonClicked = async (textToSearch) => {
+  const handleSearchButtonClicked = async (textToSearch, pageToSearch = 0) => {
+    if (!textToSearch) return;
     setSearchDisabled(true);
-    const response = await axios.get("http://localhost:8080/blogs?q=" + textToSearch + "&page=" + page);
+    const response = await axios.get("http://localhost:8080/blogs?q=" + textToSearch + "&page=" + pageToSearch);
     const { list, totalPages } = response.data;
     setTotalPages(totalPages);
     list.forEach(e => {
@@ -49,12 +49,11 @@ export default function App() {
   };
 
   const handlePaginationChange = (e, currPage) => {
-    setPage(currPage);
-    handleSearchButtonClicked(search);
+    handleSearchButtonClicked(search, currPage - 1);
   };
 
   let pagination = "";
-  if (totalPages) {
+  if (totalPages > 1) {
     pagination = <Pagination 
         count={totalPages} 
         variant="outlined" 
