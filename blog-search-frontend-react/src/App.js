@@ -32,31 +32,25 @@ export default function App() {
     setAutoCompleteOptions(options);
   };
 
-  const handleSearchButtonClicked = async () => {
+  const handleSearchButtonClicked = async (textToSearch) => {
     setSearchDisabled(true);
-    const response = await axios.get("http://localhost:8080/blogs?q=" + search + "&page=" + page);
+    const response = await axios.get("http://localhost:8080/blogs?q=" + textToSearch + "&page=" + page);
     const { list, totalPages } = response.data;
     setTotalPages(totalPages);
     list.forEach(e => {
+      // ref - https://stackoverflow.com/questions/3115150/how-to-escape-regular-expression-special-characters-using-javascript/9310752#answer-9310752
+      const escapped = search.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
       e.content = e.content
-        .split(new RegExp(search, "i"))
+        .split(new RegExp(escapped, "i"))
         .join(`<span class="highlight">${search}</span>`);
     });
     setSearchResult(list);
     setSearchDisabled(false);
   };
 
-  const handleAutoCompleteInputChange = e => {
-    const value = e.target.innerHTML;
-    setSearch(e.target.innerHTML);
-    if (value) {
-      handleSearchButtonClicked();
-    }
-  };
-
   const handlePaginationChange = (e, currPage) => {
     setPage(currPage);
-    handleSearchButtonClicked();
+    handleSearchButtonClicked(search);
   };
 
   let pagination = "";
@@ -76,7 +70,7 @@ export default function App() {
           id="search-autocomplete"
           noOptionsText="Did not match any blogs."
           options={autoCompleteOptions}
-          onInputChange={handleAutoCompleteInputChange}
+          onChange={(e, value) => setSearch(value)}
           style={{ marginTop: 24 }}
           clearOnBlur={false}
           renderInput={(params) =>
@@ -98,7 +92,7 @@ export default function App() {
                       variant="contained"
                       color="primary"
                       disabled={searchDisabled}
-                      onClick={handleSearchButtonClicked}
+                      onClick={() => handleSearchButtonClicked(search)}
                     >Search</Button>
                   </InputAdornment>
                 ),
